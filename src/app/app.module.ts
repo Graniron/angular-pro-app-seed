@@ -8,6 +8,8 @@ import { Store } from 'store';
 
 // feature modules
 import { AuthModule } from './../auth/auth.module';
+import { HealthModule } from './../health/health.module';
+
 
 // containers
 import { AppComponent } from './containers/app/app.component';
@@ -16,14 +18,15 @@ import { AppComponent } from './containers/app/app.component';
 
 // routes
 export const ROUTES: Routes = [
-  
+  {path: '', pathMatch: 'full', redirectTo: 'schedule'}
 ];
 
 @NgModule({
   imports: [
     BrowserModule,
     RouterModule.forRoot(ROUTES),
-    AuthModule
+    AuthModule,
+    HealthModule
   ],
   declarations: [
     AppComponent,
